@@ -1,6 +1,7 @@
 # Supernote
 
 ## Planners
-- [Daily Planner](./Daily Planner.pdf)
+
+- [Daily Planner](https://github.com/iocanel/supernote/blob/main/Daily%20Planner.pdf)
 
 
