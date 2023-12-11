@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{lipsum} % For generating placeholder text
+\usepackage{graphicx} % For rotating text
+\usepackage{forloop}
+\usepackage{amssymb} % For square bullet points
+
+% Define page margins
+\geometry{top=0.5in, bottom=0.25in, left=0.25in, right=0.1in}
+
+% Define a command for the horizontal lines
+\newcommand{\hlinegray}{\hrulefill}
+
+\newcounter{blanklinescounter} 
+% Define a command for mutliple blank lines
+\newcommand{\blanklines}[1]{%
+  \setcounter{blanklinescounter}{0}
+  \forloop{blanklinescounter}{1}{\value{blanklinescounter} < #1}{%
+    \hrulefill \\
+  }%
+}
+
+\begin{document}
+\pagestyle{empty} % No page numbers
+
+\begin{flushright}
+  \Large \textbf{\hspace{0.45in}date:} \hlinegray \
+  \Large \textbf{weight:} \hlinegray \\
+\end{flushright}
+
+\section*{\hspace{0.2in}\rotatebox[origin=c]{90}{meals}
+\begin{tabular}{p{1\textwidth}}
+  \textbf{breakfast} \hlinegray \\ 
+  \textbf{snack} \hlinegray \\ 
+  \textbf{lunch} \hlinegray \\ 
+  \textbf{snak} \hlinegray \\ 
+  \textbf{dinner} \hlinegray \\ 
+\end{tabular}
+}
+
+\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{workout}
+\begin{tabular}{p{1\textwidth}}
+  \textbf{1:} \hlinegray \\ 
+  \textbf{2:} \hlinegray \\ 
+  \textbf{3:} \hlinegray \\ 
+  \textbf{4:} \hlinegray \\ 
+  \textbf{comments:} \hlinegray \\ 
+\end{tabular}
+}
+
+\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{todos}
+\begin{tabular}{p{1\textwidth}}
+ \blanklines{5}
+\end{tabular}
+}
+
+
+\section*{\hspace{0.3in}notes} \section*{\rotatebox[origin=c]{90}{}
+\begin{tabular}{p{1\textwidth}}
+\blanklines{21}
+\end{tabular}
+}
+
+\newpage
+\section*{\hspace{0.3in}notes} \section*{\rotatebox[origin=c]{90}{}
+\begin{tabular}{p{1\textwidth}}
+\blanklines{40}
+\end{tabular}
+}
+
+\newpage
+\section*{\hspace{0.3in}notes} \section*{\rotatebox[origin=c]{90}{}
+\begin{tabular}{p{1\textwidth}}
+ \blanklines{40}
+\end{tabular}
+}
+\end{document}
