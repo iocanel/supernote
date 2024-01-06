@@ -5,15 +5,22 @@
 \usepackage{graphicx} % For rotating text
 \usepackage{forloop}
 \usepackage{amssymb} % For square bullet points
+\usepackage{calc} % Required for length calculations
+\usepackage{tikz}
 
 % Define page margins
-\geometry{top=0.5in, bottom=0.25in, left=0.25in, right=0.1in}
+\geometry{top=0.5in, bottom=0.25in, left=0.25in, right=0.25in}
 
 % Define a command for the horizontal lines
 \newcommand{\hlinegray}{\hrulefill}
 
-\newcounter{blanklinescounter} 
+% Define tabwidth for section tabs
+\newlength{\mytabwidth}
+\setlength{\mytabwidth}{\textwidth-0.5in}
+
+
 % Define a command for mutliple blank lines
+\newcounter{blanklinescounter} % needed by the blanklines command
 \newcommand{\blanklines}[1]{%
   \setcounter{blanklinescounter}{0}
   \forloop{blanklinescounter}{1}{\value{blanklinescounter} < #1}{%
@@ -21,26 +28,44 @@
   }%
 }
 
+% Define a new command for creating a box
+\newcommand{\checkbox}{
+    \begin{tikzpicture}
+        \draw (0,0) rectangle (0.5,0.5); % You can adjust the dimensions as needed
+    \end{tikzpicture}
+}
+
+% Define a new command for creating a box
+\newcommand{\calbox}{
+    \begin{tikzpicture}
+        \draw (0,0) rectangle (2,0.5); % You can adjust the dimensions as needed
+    \end{tikzpicture}
+}
+
 \begin{document}
 \pagestyle{empty} % No page numbers
 
-\begin{flushright}
-  \Large \textbf{\hspace{0.5in}date:} \hlinegray \
-  \Large \textbf{weight:} \hlinegray \\
-\end{flushright}
+\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{ ------ }
+\begin{tabular}{p{1\mytabwidth}}
+  \noindent date \hfill weight \calbox \\ 
+\end{tabular}
+}
+
 
 \section*{\hspace{0.3in}\rotatebox[origin=c]{90}{meals}
-\begin{tabular}{p{1\textwidth}}
-  \textbf{breakfast} \hlinegray \\ 
-  \textbf{snack} \hlinegray \\ 
-  \textbf{lunch} \hlinegray \\ 
-  \textbf{snak} \hlinegray \\ 
-  \textbf{dinner} \hlinegray \\ 
+\begin{tabular}{p{1\mytabwidth}}
+  \noindent \hfill Calories \\
+  \textbf{breakfast} \hrulefill \ \calbox \\ 
+  \textbf{snack} \hrulefill \ \calbox \\ 
+  \textbf{lunch} \hrulefill \ \calbox \\ 
+  \textbf{snak} \hrulefill \ \calbox \\ 
+  \textbf{dinner} \hrulefill \calbox \\ 
+  \noindent \hfill Total \calbox \\ 
 \end{tabular}
 }
 
 \section*{\hspace{0.3in}\rotatebox[origin=c]{90}{workout}
-\begin{tabular}{p{1\textwidth}}
+\begin{tabular}{p{1\mytabwidth}}
   \textbf{1:} \hlinegray \\ 
   \textbf{2:} \hlinegray \\ 
   \textbf{3:} \hlinegray \\ 
@@ -49,8 +74,12 @@
 \end{tabular}
 }
 
+\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{habits}
+\checkbox \textbf{Spanish} \checkbox \textbf{German} \checkbox \textbf{Guitar} \\ 
+}
+
 \section*{\hspace{0.3in}\rotatebox[origin=c]{90}{todos}
-\begin{tabular}{p{1\textwidth}}
+\begin{tabular}{p{1\mytabwidth}}
  \blanklines{5}
 \end{tabular}
 }
@@ -58,7 +87,7 @@
 
 \section*{\hspace{0.3in}notes} \section*{\rotatebox[origin=c]{90}{}
 \begin{tabular}{p{1\textwidth}}
-\blanklines{21}
+\blanklines{12}
 \end{tabular}
 }
 
