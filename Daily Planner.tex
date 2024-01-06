@@ -9,7 +9,7 @@
 \usepackage{tikz}
 
 % Define page margins
-\geometry{top=0.5in, bottom=0.25in, left=0.25in, right=0.25in}
+\geometry{top=0.5in, bottom=0.1in, left=0.25in, right=0.25in}
 
 % Define a command for the horizontal lines
 \newcommand{\hlinegray}{\hrulefill}
@@ -42,29 +42,33 @@
     \end{tikzpicture}
 }
 
+% Define dark grey color
+\definecolor{darkgrey}{gray}{0.3} % Adjust the gray scale as needed
+\definecolor{lightgrey}{gray}{0.7} % Adjust the gray scale as needed
+
 \begin{document}
 \pagestyle{empty} % No page numbers
 
-\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{ ------ }
+\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{ \textcolor{lightgrey}{----} }
 \begin{tabular}{p{1\mytabwidth}}
   \noindent date \hfill weight \calbox \\ 
 \end{tabular}
 }
 
 
-\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{meals}
+\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{\textcolor{darkgrey}{meals}}
 \begin{tabular}{p{1\mytabwidth}}
-  \noindent \hfill Calories \\
+  \noindent \hfill \textcolor{darkgrey}{Calories} \\
   \textbf{breakfast} \hrulefill \ \calbox \\ 
   \textbf{snack} \hrulefill \ \calbox \\ 
   \textbf{lunch} \hrulefill \ \calbox \\ 
   \textbf{snak} \hrulefill \ \calbox \\ 
   \textbf{dinner} \hrulefill \calbox \\ 
-  \noindent \hfill Total \calbox \\ 
+  \noindent \hfill \textcolor{darkgrey}{Total} \calbox \\ 
 \end{tabular}
 }
 
-\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{workout}
+\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{\textcolor{darkgrey}{workout}}
 \begin{tabular}{p{1\mytabwidth}}
   \textbf{1:} \hlinegray \\ 
   \textbf{2:} \hlinegray \\ 
@@ -74,32 +78,32 @@
 \end{tabular}
 }
 
-\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{habits}
+\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{\textcolor{darkgrey}{habits}}
 \checkbox \textbf{Spanish} \checkbox \textbf{German} \checkbox \textbf{Guitar} \\ 
 }
 
-\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{todos}
+\section*{\hspace{0.3in}\rotatebox[origin=c]{90}{\textcolor{darkgrey}{todos}}
 \begin{tabular}{p{1\mytabwidth}}
  \blanklines{5}
 \end{tabular}
 }
 
 
-\section*{\hspace{0.3in}notes} \section*{\rotatebox[origin=c]{90}{}
+\section*{\hspace{0.3in}{\textcolor{darkgrey}{notes}}} \section*{\rotatebox[origin=c]{90}{}
 \begin{tabular}{p{1\textwidth}}
-\blanklines{12}
+\blanklines{15}
 \end{tabular}
 }
 
 \newpage
-\section*{\hspace{0.3in}notes} \section*{\rotatebox[origin=c]{90}{}
+\section*{\hspace{0.3in}{\textcolor{darkgrey}{notes}}} \section*{\rotatebox[origin=c]{90}{}
 \begin{tabular}{p{1\textwidth}}
 \blanklines{40}
 \end{tabular}
 }
 
 \newpage
-\section*{\hspace{0.3in}notes} \section*{\rotatebox[origin=c]{90}{}
+\section*{\hspace{0.3in}{\textcolor{darkgrey}{notes}}} \section*{\rotatebox[origin=c]{90}{}
 \begin{tabular}{p{1\textwidth}}
  \blanklines{40}
 \end{tabular}
